@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FruitRichelle</string>
+    <string name="title_activity_main">FruitRichelle</string>
+    <string name="package_name">org.isj.devmobile.FruitRichelle</string>
+    <string name="custom_url_scheme">org.isj.devmobile.FruitRichelle</string>
+</resources>

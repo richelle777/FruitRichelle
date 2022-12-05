@@ -1,0 +1,49 @@
+ion-tabs {
+    background-color: var(--ion-color-frgreenextralight);
+    .cls-1{fill:#5e990b;}.cls-1,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8{fill-rule:evenodd;}.cls-2{fill:#7f573c;}.cls-3{fill:#f5ac31;}.cls-4{fill:#537918;}.cls-5{fill:#7db820;}.cls-6{fill:#543429;}.cls-7{fill:#d3141b;}.cls-8{fill:#fff;}
+    // --------------Custom Semi Transparent & Rounded Tabs----------------------
+    ion-tab-bar {
+        bottom: 0;
+        width: 100%;        
+        background-color: var(--ion-color-frgreenextralight);
+        border-radius: 60px 60px 0 0;
+        --border: 0;
+        ion-tab-button {
+            background-color: #63ad52d4;
+            // --background: var(--ion-color-frgreenextralight);
+            --color:  var(--ion-color-white);
+            --color-selected: var(--ion-color-white);
+            ion-icon {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .svg-center {
+        width: 68px;
+        margin-top: 16px;
+        path {
+            // fill: var(--ion-color-white);
+            fill: #63ad52d4;
+        }
+    }
+
+    ion-tab-button.search {
+        margin-right: -1px;
+        margin-left: -2px;
+        border-top-right-radius: 20px;
+    }
+    ion-tab-button.wishlist {
+        margin-left: -1px;
+        margin-right: -2px;
+        border-top-left-radius: 20px;
+    }
+    ion-fab {
+        ion-fab-button {
+            --background: linear-gradient(to bottom, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+            ion-icon {
+                font-size: 2rem;
+            }
+        }
+    }
+    }
+    

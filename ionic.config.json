@@ -1,0 +1,7 @@
+{
+  "name": "batfkc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

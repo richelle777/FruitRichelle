@@ -1,0 +1,69 @@
+.container-fruit {
+  // padding: 20px;
+}
+
+.logo {
+  width: 190px;
+}
+
+.search-icon {
+  padding: 17px;
+  font-size: 45px;
+  color: var(--ion-color-frgreenlight);
+}
+
+.title {
+  padding: 20px;
+  font-size: 16px;
+}
+.card-info{
+  background-color: var(--ion-color-frgreenlight);
+}
+.img-card{
+  width: 320px;
+  height: 200px;
+}
+.img-bg{
+  margin-top: 200px;
+}
+.img-fruit{
+  // width: 150px;
+  // height: 150px;
+  width: 150px;
+  height: 120px;
+}
+// .card-orange{
+//   background-color: var(--ion-color-frorangeextralight);
+// }
+// // .card-mangue{
+// //   background: linear-gradient(45deg, rgba(254, 157, 52, 0.6392156863), #DD4040);
+// // }
+// .card-kiwi{
+//   background-color: var(--ion-color-frgreenlight);
+// }
+ion-card{
+  border-radius: 20px;
+}
+
+
+
+.input{
+  padding: 10px!important;
+  background-color: var(--ion-color-frgreenlight);
+  border-radius: 19px;
+  // width: 300px;
+  width: 100%;
+  height: 42px;  
+  margin-top: 20px;
+}
+.icon-search{
+  font-size: 20px;
+}
+.button-add{
+  color: var(--ion-color-frgreenlight);
+}
+.tablinks{
+  color: var(--ion-color-frgreen);;
+  border-bottom: 2px solid;
+}
+
