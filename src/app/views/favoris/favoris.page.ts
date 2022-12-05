@@ -11,7 +11,8 @@ export class FavorisPage implements OnInit {
 
   resultsOfFilter = new Map<any,any>();
 
-  constructor(private fruitService:FruitService , private router:Router) { 
+
+  constructor(private fruitService:FruitService , private router:Router) {  
     this.resultsOfFilter = this.fruitService.showFavoriteFruits();
     console.log(this.resultsOfFilter)
   }
@@ -22,6 +23,8 @@ export class FavorisPage implements OnInit {
     localStorage.setItem("fruit", JSON.stringify(obj));
     localStorage.setItem("colorfruit", JSON.stringify(obj.color));
     localStorage.setItem("imgfruit", JSON.stringify(obj.img));
+    console.log(JSON.stringify(obj.color));
+    
     this.router.navigate(['detail'])
   }
   // handleChange(event) {

@@ -1,20 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <div class="d-flex">
-      <div class="p-4">
+  <ion-toolbar  color="frgreenextralight">
+
+      <div class="p-4 content-search">
         <ion-input class="input text-bold" placeholder="search fruit" clearInput (ionChange)="handleChange($event)" debounce="1000">
           <ion-icon name="search-sharp" class="p-5 icon-search"  color="light"></ion-icon>
         </ion-input>
         <!-- <ion-icon *ngIf="!isHide" name="search-circle-sharp" class="search-icon" (click)="showInput()"></ion-icon> -->
       </div>
-      <div class="d-flex justify-between p-10"><div><ion-button class="button-add" id="open-modal" color="frgreen"><ion-icon name="add-circle-sharp"></ion-icon>ADD fruit</ion-button></div></div>
-    </div>
+      <!-- <div class="d-flex justify-between p-10"><div><ion-button class="button-add" (click)="openModal()" color="frgreen"><ion-icon name="add-circle-sharp"></ion-icon>ADD fruit</ion-button></div></div>
+    -->
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="frgreenextralight">
+<ion-content  color="frgreenextralight">
 
- <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+ <form mode="ios">
     <ng-template>
       <ion-header>
         <ion-toolbar color="frgreenextralight">
@@ -36,61 +37,61 @@
         <!-- <ion-item> -->
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Name</ion-label>
-          <ion-input type="text" placeholder="name of fruit" [(ngModel)]="name" class="input mt-10"></ion-input>
+          <ion-input type="text" placeholder="name of fruit" [(ngModel)]="name" [clearInput]="true" class="input mt-10"></ion-input>
         </div>
         <!-- </ion-item> -->
         <!-- <ion-item> -->
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Family</ion-label>
-          <ion-input type="text" placeholder="family of fruit" [(ngModel)]="family" class="input mt-10" required="required"></ion-input>
+          <ion-input type="text" placeholder="family of fruit" [(ngModel)]="family" [clearInput]="true" class="input mt-10" required="required"></ion-input>
         </div>
         <!-- </ion-item> -->
         <!-- <ion-item> -->
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Genus</ion-label>
-          <ion-input type="text" placeholder="genus of fruit" [(ngModel)]="genus" class="input mt-10"></ion-input>
+          <ion-input type="text" placeholder="genus of fruit" [(ngModel)]="genus" [clearInput]="true" class="input mt-10"></ion-input>
         </div>
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Order</ion-label>
-          <ion-input type="text" placeholder="order of fruit" [(ngModel)]="order" class="input mt-10"></ion-input>
+          <ion-input type="text" placeholder="order of fruit" [(ngModel)]="order" [clearInput]="true" class="input mt-10"></ion-input>
         </div>
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Carbohydrates</ion-label>
-          <ion-input type="number" placeholder="carbohydrates" [(ngModel)]="carbohydrates" class="input mt-10"></ion-input>
+          <ion-input type="number" placeholder="carbohydrates" [(ngModel)]="carbohydrates" [clearInput]="true" class="input mt-10"></ion-input>
         </div>
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Protein</ion-label>
-          <ion-input type="number" placeholder="protein" [(ngModel)]="protein" class="input mt-10"></ion-input>
+          <ion-input type="number" placeholder="protein" [(ngModel)]="protein" [clearInput]="true" class="input mt-10"></ion-input>
         </div>
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Fat</ion-label>
-          <ion-input type="number" placeholder="fat" [(ngModel)]="fat" class="input mt-10"></ion-input>
+          <ion-input type="number" placeholder="fat" [(ngModel)]="fat" [clearInput]="true" class="input mt-10"></ion-input>
         </div>
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Calories</ion-label>
-          <ion-input type="number" placeholder="calories" [(ngModel)]="calories" class="input mt-10"></ion-input>
+          <ion-input type="number" placeholder="calories" [(ngModel)]="calories" [clearInput]="true" class="input mt-10"></ion-input>
         </div>
         <div class="mt-15">
           <ion-label position="stacked" class="ml-10">Sugar</ion-label>
-          <ion-input type="number" placeholder="sugar" [(ngModel)]="sugar" class="input mt-10"></ion-input>
+          <ion-input type="number" placeholder="sugar" [(ngModel)]="sugar" [clearInput]="true" class="input mt-10"></ion-input>
         </div>
         <!-- </ion-item> -->
         
       </ion-content>
     </ng-template>
-  </ion-modal>
+  </form>
   <div><h2 class="text-center"><ion-text color="frgreen" class="title-fruit">List Of Our Fruits</ion-text></h2></div>
-  <div>
+  <div *ngIf="testConnection">
     <ion-grid>
       <ion-row>
         <ion-col size="6" *ngFor="let fruit of resultsOfFilter"> 
           <ion-card :color="{{fruit.color}}" (click) = "toPage(fruit)">
-            <ion-badge color="frgreen"><ion-icon name="information-circle-outline"></ion-icon></ion-badge>
+            <ion-badge class="badge-fruit" color="frgreen"><ion-icon name="information-circle-outline" class="icon-fruit"></ion-icon></ion-badge>
             <!-- <div class="content-img"> -->
-            <ion-img :src="{{fruit.img}}" class="img-fruit"></ion-img>
+            <ion-img :src="{{fruit.img}}" class="img-fruit m-auto"></ion-img>
             <!-- </div> -->
             <!-- <div> -->
-            <ion-header class="mt--20"><h2 class="text-center">{{fruit.name}}</h2>
+            <ion-header class="mt--20 h-50"><h2 class="text-center">{{fruit.name}}</h2>
             </ion-header>
              <!-- </div> -->
           </ion-card>
@@ -110,5 +111,38 @@
         <!-- </div> -->
       </ion-row>
     </ion-grid>
+    <!-- <ion-grid>
+      
+      <ion-list *ngIf="!resultsOfFilter.length">
+        <ion-list-header>
+          <ion-skeleton-text [animated]="true" style="width: 80px"></ion-skeleton-text>
+        </ion-list-header>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-grid> -->
   </div>
+  <div *ngIf="!testConnection">
+    <ion-img src="assets/img/realistic-mango.png"></ion-img>
+    <div><h2 class="text-center"> <ion-text color="frgreen">Please Check your Connection</ion-text></h2></div>
+  </div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="openModal()" expand="block" color="frgreen">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

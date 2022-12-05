@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { Network } from '@capacitor/network';
 import * as cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+
+Network.addListener('networkStatusChange', status => {
+  console.log('Network status changed', status);
+});
+
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService {
   fruits = [];
+  logCurrentNetworkStatus : any;
+  status:any;     
   constructor(private storage: Storage) {
+   
   }
   async dbInitializer() {
     await this.storage.create();//permet de creer la bd si elle n'existe pas
@@ -14,18 +23,20 @@ export class DatabaseService {
   }
   async creation(objFruit, tableName) {
     let fruits = [];
-    
-    this.storage.get(tableName).then((reponse => {
-      if (reponse) {
-        fruits = reponse;
-      }
-      fruits.push(objFruit)
-      this.storage.set(tableName, fruits).then((data => {
-        console.log("good");
-      })).catch((rep => {
-        console.log("error");
-      }));
-    }));
+    const reponse = await this.storage.get(tableName);
+    if (reponse) {
+      fruits = reponse;
+    }
+    fruits.push(objFruit)
+    this.storage.set(tableName, fruits);
+  }
+  async connection(tableName){
+    return this.storage.get(tableName);
+  }
+  async addConnection(connect , tableName){
+    let connection = [];
+    connection.push(connect);
+    this.storage.set(tableName, connect);
   }
   async suppression(tableName) {
     this.storage.remove(tableName);

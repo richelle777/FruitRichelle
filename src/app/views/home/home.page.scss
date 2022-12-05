@@ -1,6 +1,3 @@
-.container-fruit {
-  // padding: 20px;
-}
 
 .logo {
   width: 190px;
@@ -17,7 +14,7 @@
   font-size: 16px;
 }
 .card-info{
-  background-color: var(--ion-color-frgreenlight);
+  background: linear-gradient(to top, var(--ion-color-frgreen), var(--ion-color-frgreenlight));
 }
 .img-card{
   width: 320px;
@@ -27,31 +24,29 @@
   margin-top: 200px;
 }
 .img-fruit{
-  // width: 150px;
-  // height: 150px;
   width: 150px;
   height: 120px;
 }
-// .card-orange{
-//   background-color: var(--ion-color-frorangeextralight);
-// }
-// // .card-mangue{
-// //   background: linear-gradient(45deg, rgba(254, 157, 52, 0.6392156863), #DD4040);
-// // }
-// .card-kiwi{
-//   background-color: var(--ion-color-frgreenlight);
-// }
 ion-card{
-  border-radius: 20px;
+  border-radius: 40px;
+}
+.badge-fruit{
+  margin-top: 5px;
+  width: 40px;
+  border-radius: 100%;
+}
+.icon-fruit{
+  font-size: 30px;
 }
 
-
+ion-img{
+  object-fit: cover;
+}
 
 .input{
   padding: 10px!important;
   background-color: var(--ion-color-frgreenlight);
   border-radius: 19px;
-  // width: 300px;
   width: 100%;
   height: 42px;  
   margin-top: 20px;
@@ -67,3 +62,6 @@ ion-card{
   border-bottom: 2px solid;
 }
 
+.img-bg {
+  background: linear-gradient(to right, rgba(50, 70, 80, 0.7), rgba(30, 20, 150, 0.7));
+}

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="frgreenextralight" class="p-20">
-    <ion-title>detail</ion-title>
+    <ion-title class="text-center"><h1>{{fruitSelected.name}}</h1></ion-title>
     <ion-back-button slot="start" :color="{{colorfruit}}" text="" icon="chevron-back-circle-outline"></ion-back-button>
     <ion-icon slot="end" :name="{{isLikeIcon}}" class="heart-icon  box-shadow-pulse" (click)="liked()"
       :color="{{colorfruit}}"></ion-icon>
@@ -47,19 +47,21 @@
         <ion-text :color="{{colorfruit}}">{{fruitSelected.name}}</ion-text>
       </h1>
     </div>
-    <div class="d-flex">
+    <div class="d-flex justify-around">
       <div>
+        <div class="text-center pr-20">{{fruitSelected.nutritions.carbohydrates}}</div>
         <div class="progress-circle progress-circle1" data-value="38">
-          <div class="progress-masque">
+          <!-- <div class="progress-masque">
             <div class="progress-barre"></div>
             <div class="progress-sup50"></div>
-          </div>
+          </div> -->
         </div>
         <div class="text-center">
           Carbohydrates
         </div>
       </div>
       <div>
+        <div class="text-center">{{fruitSelected.nutritions.protein}}</div>
         <div class="progress-circle progress-circle2" data-value="38">
         </div>
         <div class="text-center">
@@ -67,6 +69,7 @@
         </div>
       </div>
       <div>
+        <div class="text-center">{{fruitSelected.nutritions.fat}}</div>
         <div class="progress-circle progress-circle3" data-value="38">
         </div>
         <div class="text-center">
@@ -74,6 +77,7 @@
         </div>
       </div>
       <div>
+        <div class="text-center">{{fruitSelected.nutritions.calories}}</div>
         <div class="progress-circle progress-circle4" data-value="38">
         </div>
         <div class="text-center">
@@ -81,6 +85,7 @@
         </div>
       </div>
       <div>
+        <div class="text-center">{{fruitSelected.nutritions.sugar}}</div>
         <div class="progress-circle progress-circle5" data-value="38">
         </div>
         <div class="text-center">

@@ -1,7 +1,22 @@
-.img-fruit{
+.img-fruit {
     width: 150px;
     height: 120px;
 }
-.title-fruit{
+
+.title-fruit {
     border-bottom: 2px dotted;
+}
+
+ion-card {
+    border-radius: 40px;
+}
+
+.badge-fruit {
+    margin-top: 5px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.icon-fruit {
+    font-size: 30px;
 }

@@ -19,18 +19,30 @@ export class DetailPage implements OnInit {
 
   ngOnInit() {
     const retrieve = localStorage.getItem("fruit");
-    this.fruitSelected = JSON.parse(retrieve);   
+    this.fruitSelected = JSON.parse(retrieve);  
+    console.log(this.fruitSelected);
+     
     this.colorfruit = JSON.parse(localStorage.getItem("colorfruit"))
     this.imgfruit = JSON.parse(localStorage.getItem("imgfruit")) 
     console.log(this.fruitSelected.nutritions.sugar);
-    
   }
+
   ionViewDidEnter(){
-   
   }
+
   liked(){
+    Object.defineProperty(this.fruitSelected, 'color', {
+      value: this.colorfruit,
+      writable: true
+    });
+    Object.defineProperty(this.fruitSelected, 'img', {
+      value: this.imgfruit,
+      writable: true
+    });
     if(this.isLikeIcon == 'heart-outline'){
       this.isLikeIcon = 'heart-sharp'
+      console.log(this.fruitSelected);
+      
       this.fruitService.addToFavorite(this.fruitSelected);
     }  
     else{

@@ -1,22 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>favoris</ion-title>
+  <ion-toolbar  color="frgreenextralight">
+    <ion-title class="text-center">FAVORITES FRUITS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div><h2 class="text-center"><ion-text color="frgreen" class="title-fruit">List Of Our Fruits</ion-text></h2></div>
+<ion-content  color="frgreenextralight">
+  <div><h2 class="text-center"><ion-text color="frgreen" class="title-fruit">Your Favorites Fruits</ion-text></h2></div>
   <div>
     <ion-grid>
       <ion-row>
         <ion-col size="6" *ngFor="let fruit of resultsOfFilter | keyvalue"> 
-          <ion-card :color="{{fruit.value.color}}" (click) = "toPage(fruit)">
-            <ion-badge color="frgreen"><ion-icon name="information-circle-outline"></ion-icon></ion-badge>
+          <ion-card :color="{{fruit.value.color}}" (click) = "toPage(fruit.value)">
+            <ion-badge color="frgreen" class="badge-fruit"><ion-icon name="information-circle-outline" class="icon-fruit"></ion-icon></ion-badge>
             <!-- <div class="content-img"> -->
-            <ion-img :src="{{fruit.value.img}}" class="img-fruit"></ion-img>
+            <ion-img :src="{{fruit.value.img}}"  class="img-fruit m-auto"></ion-img>
             <!-- </div> -->
             <!-- <div> -->
-            <ion-header class="mt--20"><h2 class="text-center">{{fruit.value.name}}</h2>
+            <ion-header class="mt--20 h-50"><h2 class="text-center">{{fruit.value.name}}</h2>
             </ion-header>
              <!-- </div> -->
           </ion-card>

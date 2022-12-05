@@ -10,7 +10,7 @@
           <ion-icon name="search-sharp" class="p-5 icon-search" (click)="showInput()" color="light"></ion-icon>
           <ion-icon name="close-sharp" slot="end" (click)="closeInput()"></ion-icon>
         </ion-input>
-        <ion-icon *ngIf="!isHide" name="search-circle-sharp" class="search-icon" (click)="showInput()"></ion-icon>
+        <ion-icon *ngIf="!isHide" name="search-circle-sharp" class="search-icon" (click)="showInput()" (ionChange)="handleChange($event)"></ion-icon>
       </div>
     </div>
     <ion-title>
@@ -27,45 +27,16 @@
       <div class="w-full">
         <ion-card class="card-info">
           <p class="absolute title text-center">
-            <ion-text color="light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo eos commodi magnam
-              magni possimus vero aperiam reprehenderit dolorum.</ion-text>
+            <ion-text color="light"><h1 class="font-bold">FruitRichelle is a fruit application at your disposal to satisfy all your desires.</h1></ion-text>
           </p>
-          <ion-img src="assets/img/fruits-corner.png" class="img-card"></ion-img>
+          <ion-img src="assets/img/eclaboussure-orange.png" class="img-card"></ion-img>
         </ion-card>
       </div>
-      <!-- <div><ion-card class="card-info"><p class="absolute title text-center"><ion-text class="bold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo eos commodi magnam magni possimus vero aperiam reprehenderit dolorum.</ion-text></p><ion-img src="assets/img/banana-splash.png"></ion-img></ion-card></div>
-      <div><ion-card class="card-info"><p class="absolute title text-center"><ion-text color="light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo eos commodi magnam magni possimus vero aperiam reprehenderit dolorum.</ion-text></p><ion-img src="assets/img/fruits-corner.png"></ion-img></ion-card></div>
-      <div><ion-card class="card-info"><p class="absolute title text-center"><ion-text color="light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo eos commodi magnam magni possimus vero aperiam reprehenderit dolorum.</ion-text></p><ion-img src="assets/img/fruits-corner.png"></ion-img></ion-card></div>
-     -->
     </div>
-    <!-- <div>
-      <ion-button class="button-add" color="frgreen" id="open-modal"><ion-icon name="add-circle-sharp" class="p-5"></ion-icon> Add Fruit</ion-button>
-    </div> -->
-    <!-- <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
-      <ng-template>
-        <ion-header>
-          <ion-toolbar>
-            <ion-buttons slot="start">
-              <ion-button (click)="cancel()">Cancel</ion-button>
-            </ion-buttons>
-            <ion-title>Welcome</ion-title>
-            <ion-buttons slot="end">
-              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content class="ion-padding">
-          <ion-item>
-            <ion-label position="stacked">Enter your name</ion-label>
-            <ion-input type="text" placeholder="Your name" [(ngModel)]="name"></ion-input>
-          </ion-item>
-        </ion-content>
-      </ng-template>
-    </ion-modal> -->
     <div class="container-fruit">
       <div class="title-category d-flex overflow-x">
         <div *ngFor="let cat of Scategories" class="pl-15">
-          <ion-text (click)="choosedCat(cat)" [ngClass]="{ 'tablinks': selectCat == cat}">{{cat}}</ion-text>
+          <h2><ion-text (click)="choosedCat(cat)" [ngClass]="{ 'tablinks': selectCat == cat}">{{cat}}</ion-text></h2>
         </div>
       </div>
       <div>
@@ -74,30 +45,17 @@
             <ion-col size="6" *ngFor="let fruit of fruitsOfCat">
               <!-- <div> -->
               <ion-card :color="{{fruit.color}}" (click) = "toPage(fruit)">
-                <ion-badge color="frgreen"><ion-icon name="information-circle-outline"></ion-icon></ion-badge>
+                <ion-badge class="badge-fruit" color="frgreen"><ion-icon name="information-circle-outline" class="icon-fruit"></ion-icon></ion-badge>
                 <!-- <div class="content-img"> -->
-                <ion-img :src="{{fruit.img}}" class="img-fruit"></ion-img>
+                <ion-img :src="{{fruit.img}}" class="img-fruit m-auto"></ion-img>
                 <!-- </div> -->
                 <!-- <div> -->
-                <ion-header class="mt--20"><h2 class="text-center">{{fruit.name}}</h2>
+                <ion-header class="mt--20 h-50"><h2 class="text-center">{{fruit.name}}</h2>
                 </ion-header>
                  <!-- </div> -->
               </ion-card>
               
             </ion-col>
-            <!-- </div>
-        <div> -->
-            <!-- <ion-col size="6">
-              <ion-card class="card-mangue">
-                <ion-img src="assets/img/mangue-entiere.png" class="img-fruit"></ion-img>
-              </ion-card>
-            </ion-col> -->
-            <!-- </div>
-        <div> -->
-            <!-- <ion-card class="card-kiwi">
-              <ion-img src="assets/img/kiwi.png" class="img-fruit"></ion-img>
-            </ion-card> -->
-            <!-- </div> -->
           </ion-row>
         </ion-grid>
       </div>

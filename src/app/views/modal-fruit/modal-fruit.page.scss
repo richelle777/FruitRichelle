@@ -7,11 +7,7 @@ ion-card {
     width: 40px;
     border-radius: 100%;
 }
-ion-skeleton-text {
-    --border-radius: 9999px;
-    --background: rgba(188, 0, 255, 0.065);
-    --background-rgb: 188, 0, 255;
-  }
+
 .icon-fruit {
     font-size: 30px;
 }
@@ -22,10 +18,7 @@ ion-skeleton-text {
 .icon-fruit {
     font-size: 30px;
 }
-.content-search{
-    padding-left: 50px;
-    padding-right: 50px;
-}
+
 ion-img {
     object-fit: cover;
 }

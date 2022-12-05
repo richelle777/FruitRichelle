@@ -138,6 +138,13 @@
 	--ion-color-frgreenextrasmalllight-contrast-rgb: 0,0,0;
 	--ion-color-frgreenextrasmalllight-shade: #cddbc8;
 	--ion-color-frgreenextrasmalllight-tint: #ebfae6;
+
+  --ion-color-frgreenlight2: #ebf2eb;
+	--ion-color-frgreenlight2-rgb: 235,242,235;
+	--ion-color-frgreenlight2-contrast: #000000;
+	--ion-color-frgreenlight2-contrast-rgb: 0,0,0;
+	--ion-color-frgreenlight2-shade: #cfd5cf;
+	--ion-color-frgreenlight2-tint: #edf3ed;
 }
 
 .ion-color-frgreenextrasmalllight {
@@ -147,6 +154,14 @@
 	--ion-color-contrast-rgb: var(--ion-color-frgreenextrasmalllight-contrast-rgb);
 	--ion-color-shade: var(--ion-color-frgreenextrasmalllight-shade);
 	--ion-color-tint: var(--ion-color-frgreenextrasmalllight-tint);
+}
+.ion-color-frgreenlight2 {
+	--ion-color-base: var(--ion-color-frgreenlight2);
+	--ion-color-base-rgb: var(--ion-color-frgreenlight2-rgb);
+	--ion-color-contrast: var(--ion-color-frgreenlight2-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-frgreenlight2-contrast-rgb);
+	--ion-color-shade: var(--ion-color-frgreenlight2-shade);
+	--ion-color-tint: var(--ion-color-frgreenlight2-tint);
 }
 
 .ion-color-frpurplelight {

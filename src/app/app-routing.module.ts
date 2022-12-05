@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'detail',
     loadChildren: () => import('./views/detail/detail.module').then( m => m.DetailPageModule)
   },
+  {
+    path: 'modal-fruit',
+    loadChildren: () => import('./views/modal-fruit/modal-fruit.module').then( m => m.ModalFruitPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="frgreenextralight">
+    <div class="d-flex justify-between">
+      <div>
+        <ion-button (click)="cancel()" class="button-form" color="danger">Cancel</ion-button>
+      </div>
+      <div>
+        <ion-title>SAVE FRUIT</ion-title>
+      </div>
+      <div>
+        <ion-button (click)="confirm()" [strong]="true" class="button-form" color="frgreen">Confirm</ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="frgreenextralight">
+
+  <form mode="ios" class="p-20">
+    <div class="mt-15" *ngIf="!isOk">
+      <p>
+        <ion-text color="danger">Please fill in all the requirements please</ion-text>
+      </p>
+    </div>
+    <!-- <ion-item> -->
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Name</ion-label>
+      <ion-input type="text" placeholder="name" [(ngModel)]="fruit.name" [ngModelOptions]="{standalone: true}" [clearInput]="true" class="input mt-10">
+      </ion-input>
+    </div>
+    <!-- </ion-item> -->
+    <!-- <ion-item> -->
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Family</ion-label>
+      <ion-input type="text" placeholder="family" [(ngModel)]="fruit.family" [ngModelOptions]="{standalone: true}" [clearInput]="true" class="input mt-10"
+        required="required"></ion-input>
+    </div>
+    <!-- </ion-item> -->
+    <!-- <ion-item> -->
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Genus</ion-label>
+      <ion-input type="text" placeholder="genus" [(ngModel)]="fruit.genus" [ngModelOptions]="{standalone: true}" [clearInput]="true" class="input mt-10">
+      </ion-input>
+    </div>
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Order</ion-label>
+      <ion-input type="text" placeholder="order" [(ngModel)]="fruit.order" [ngModelOptions]="{standalone: true}" [clearInput]="true" class="input mt-10">
+      </ion-input>
+    </div>
+    <div>
+      <h1>Nutritions</h1>
+    </div>
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Carbohydrates</ion-label>
+      <ion-input type="number" placeholder="carbohydrates" [(ngModel)]="fruit.carbohydrates" [ngModelOptions]="{standalone: true}"  [clearInput]="true"
+        class="input mt-10"></ion-input>
+    </div>
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Protein</ion-label>
+      <ion-input type="number" placeholder="protein"  [(ngModel)]="fruit.protein" [ngModelOptions]="{standalone: true}" [clearInput]="true" class="input mt-10">
+      </ion-input>
+    </div>
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Fat</ion-label>
+      <ion-input type="number" placeholder="fat" [(ngModel)]="fruit.fat" [ngModelOptions]="{standalone: true}"  [clearInput]="true" class="input mt-10"></ion-input>
+    </div>
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Calories</ion-label>
+      <ion-input type="number" placeholder="calories"  [(ngModel)]="fruit.calories" [ngModelOptions]="{standalone: true}" [clearInput]="true" class="input mt-10">
+      </ion-input>
+    </div>
+    <div class="mt-15">
+      <ion-label position="stacked" class="ml-10">Sugar</ion-label>
+      <ion-input type="number" placeholder="sugar"  [(ngModel)]="fruit.sugar" [ngModelOptions]="{standalone: true}"[clearInput]="true" class="input mt-10">
+      </ion-input>
+    </div>
+    <!-- </ion-item> -->
+
+  </form>
+</ion-content>
