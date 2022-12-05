@@ -1,4 +1,4 @@
-import { CategorieService } from './../../services/categorie/categorie.service';
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FruitService } from 'src/app/services/fruit/fruit.service';
 import { GetFruitsService } from 'src/app/services/getFruits/get-fruits.service';

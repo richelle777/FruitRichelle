@@ -61,43 +61,7 @@
 .progress-circle[data-value^='100'] .progress-masque {
   clip: rect(auto, auto, auto, auto);
 }
-// .progress-barre,
-// .progress-sup50 {
-//   position: absolute;
-//   box-sizing: border-box;         /* prise en compte bordure dans la dimension */
-//   border-width: .15em;            /* largeur bordure de la gauge */
-//   border-style: solid;
-//   border-color: #069;
-//   border-radius: 50%;             /* rendu aspect circulaire */
-//   width: 1em;                     /* largeur à 100% */
-//   height: 1em;                    /* hauteur à 100% */
-//   clip: rect(0, .5em, 1em, 0);    /* on ne garde que la partie gauche */
-// }
-// .progress-circle.red {
-//     border-color: #F8E0E0;          /* couleur de fond de la barre */
-//   }
-//   .progress-circle.red .progress-masque {
-//     border-color: #B40000;          /* couleur de la barre d'avancement */
-//   }
-// .progress-circle:after {
-//     content: attr(data-value) "%";  /* récup. valeur de progression */
-//     font-size: 0.15em;              /* taille de la font en % du parent */
-//     height: 100%;                   /* centrage dans le parent */
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-  
-//     /*-- pour effet shadow intérieur --*/
-//     border-radius: 50%;
-//     // box-shadow: 0 0 .5em rgba(0, 0, 0, .5) inset;
-//   }
-// .progress-sup50 {
-//     display: none;
-//     clip: rect(0, 1em, 1em, .5em);
-//   }
-//   .progress-circle.small {
-//     font-size: 5em;                 /* soit 80px avec une font de 16px */
-//   }
+
   .progress-circle.thin,
 .progress-circle.thin .progress-barre,
 .progress-circle.thin .progress-sup50 {
